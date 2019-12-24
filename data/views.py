@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.views import generic
 
-# Create your views here.
-def show(request, question_id):
-    return "hello"
+from .models import Data
+
+
+class ListView(generic.list.ListView):
+    model = Data
+    paginate_by = 50

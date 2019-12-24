@@ -10,16 +10,20 @@
       {% load static %}
 
     <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="https://static.djangoproject.com/img/favicon.6dbf28c0650e.ico"/>
     <title>CSV Parser in Django</title>
   </head>
   <body>
-    <div class="text-center">
-        <div class="cover-container">
-            <main class="inner cover">
-                {% block content %}
-                {% endblock %}
-            </main>
+    <div class="d-flex w-100 h-100 p-3 mx-auto flex-column align-items-center">
+      <header class="cover-container masthead mb-auto text-center">
+        <div class="inner">
+          <h3 class="masthead-brand">CSV Parser in <img src="https://static.djangoproject.com/img/logo-django.42234b631760.svg"/></h3>
         </div>
+      </header>
+      <main class="inner cover">
+        {% block content %}
+        {% endblock %}
+      </main>
     </div>
 
 

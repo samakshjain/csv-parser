@@ -3,7 +3,7 @@ import csv
 from django.core.management.base import BaseCommand, CommandError
 from django.db import IntegrityError
 
-from main.models import Data
+from data.models import Data
 
 
 class Command(BaseCommand):
@@ -18,6 +18,7 @@ class Command(BaseCommand):
                 csv_reader = csv.DictReader(csv_file, delimiter='|', fieldnames=[
                     'reference_id', 'timestamp', 'handle', 'tweet'
                 ])
+                # Can add sanitization here
                 for row in csv_reader:
                     Data.objects.create(**row)
         except IntegrityError:
